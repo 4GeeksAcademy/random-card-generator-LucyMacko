@@ -1,11 +1,32 @@
 /* eslint-disable */
-import "bootstrap";
 import "./style.css";
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+window.onload = () => {
+  document.querySelector(".card").classList.add(generateTypeOfACard());
+  document.getElementById("generate").innerHTML = generateValueOfACard();
+};
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
+const generateTypeOfACard = () => {
+  const cardType = ["diamond", "heart", "spade", "club"];
+  return cardType[Math.floor(Math.random() * cardType.length)];
+};
+
+const generateValueOfACard = () => {
+  const cardValues = [
+    "II",
+    "III",
+    "IV",
+    "V",
+    "VI",
+    "VII",
+    "VIII",
+    "IX",
+    "X",
+    "J🤴",
+    "K👑",
+    "Q👑",
+    "A"
+  ];
+
+  return cardValues[Math.floor(Math.random() * cardValues.length)];
 };
